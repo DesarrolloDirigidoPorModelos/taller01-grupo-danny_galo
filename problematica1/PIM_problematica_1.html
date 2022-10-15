@@ -1,0 +1,33 @@
+
+<html>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+        <h5>PIM - Problemática 1 - Proceso selección de turnos</h5>
+        <div class="mermaid">
+          classDiagram
+            direction LR
+            class Cliente{
+              +String identificacion
+              +String nombres
+              +String apellidos
+            }
+            class Turno{
+              +DateTime fecha
+              +String tematica
+            }            
+            class Empleado{
+              +String identificacion
+              +String nombres
+              +String apellidos
+            }            
+            Cliente "1" o-- "1..n" Turno : turnos
+            Turno "n..*" -- "1" Empleado : empleado
+
+        </div>
+    </body>
+</html>
+
